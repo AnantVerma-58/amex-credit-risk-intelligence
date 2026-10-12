@@ -1,0 +1,48 @@
+# Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Python caches and tests
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Local environments
+.venv/
+venv/
+env/
+conda-meta/
+
+# Local datasets
+/data/raw/
+/data/staging/
+/data/features/
+
+# Trained models and experiment artifacts
+/models/
+mlruns/
+mlartifacts/
+
+# Customer-level prediction outputs
+reports/model_comparison/validation_predictions.parquet
+reports/model_comparison/test_predictions.parquet
+
+# Editor and OS files
+.vscode/
+.idea/
+.DS_Store
+.ipynb_checkpoints/
+
+# Local dashboard prototype (not part of the GitHub release)
+.streamlit/
+dashboard/streamlit/
+
+# Local development log
+/LOG.txt

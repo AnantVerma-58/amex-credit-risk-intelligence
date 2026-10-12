@@ -1,0 +1,274 @@
+AMERICAN EXPRESS CREDIT RISK PROJECT DETAILED DEVELOPMENT AND PROGRESS
+LOG =====================================
+
+Last updated: 11 October 2026 Status: In progress Purpose: Maintain a
+durable, factual record of work completed, commands executed, observed
+outputs, validation results, decisions, and future tasks.
+
+IMPORTANT NOTE ON SCOPE
+
+This log records only actions and results confirmed in the available
+project conversation. It does not assume that unmentioned setup, schema
+design, database configuration, feature engineering, model training, or
+evaluation work has been completed. Add entries as each additional step
+is verified.
+
+1. PROJECT OVERVIEW
+
+Project name: American Express Credit Risk
+
+Workspace directory: <PROJECT_ROOT>
+
+Project goal (high-level): Develop a credit-risk prediction workflow
+using the American Express project data. The exact modeling objective,
+target definition, evaluation metric, and final deliverables should be
+documented from the project specification or README when confirmed.
+
+Current confirmed milestone: The label-ingestion script was executed. It
+loaded the target labels from the raw training-label CSV, reported
+458,913 label rows, printed the target distribution, reported zero
+import warnings, and stated that label-import validation passed.
+
+2. CONFIRMED WORK COMPLETED
+
+MILESTONE 1 — LABEL INGESTION Date recorded: 23 September 2026 (based on
+the project conversation timestamp)
+
+Working directory: <PROJECT_ROOT>
+
+Command executed: python src/ingestion/load_labels.py
+
+Script: src/ingestion/load_labels.py
+
+Input file reported by the script:
+<PROJECT_ROOT>/data/raw/train_labels.csv
+
+Purpose of this step: Run the project’s label-ingestion script to load
+the training labels from the raw CSV file into the project’s
+ingestion/data workflow.
+
+Observed terminal output: Loading labels from
+<PROJECT_ROOT>/data/raw/train_labels.csv
+Rows reported affected: 458,913 Label rows: 458,913 Target distribution:
+0: 340,085 1: 118,828 Import warnings: 0 Label import validation passed.
+
+Recorded results: - Rows reported affected: 458,913 - Label rows
+reported: 458,913 - Target value 0: 340,085 - Target value 1: 118,828 -
+Import warnings: 0 - Validation message: “Label import validation
+passed.”
+
+Interpretation of the output: - The script completed far enough to
+report row counts, target counts, and validation status. - The two
+target counts sum to 458,913, matching the reported label-row count. -
+Target value 0 accounts for approximately 74.11% of the labels. - Target
+value 1 accounts for approximately 25.89% of the labels. - The observed
+target distribution is imbalanced: class 0 has more examples than
+class 1. This should be considered during later model evaluation. - The
+script reported no import warnings.
+
+Validation and limitations: - The script explicitly reported that
+label-import validation passed. - The terminal output alone does not
+specify every validation rule used. - The output does not, by itself,
+prove that all feature data has been ingested, that joins with feature
+records are correct, or that the entire pipeline is complete. - The
+exact semantic meaning of target values 0 and 1 should be taken from the
+dataset documentation or project code rather than inferred from the
+counts alone. - The output does not identify the database engine or
+table name, so those details should be added after checking the
+script/configuration.
+
+3. TARGET DISTRIBUTION DETAILS
+
+Total labels: 458,913
+
+  Target value   Count     Approximate share
+  -------------- --------- -------------------
+  0              340,085   74.11%
+  1              118,828   25.89%
+  Total          458,913   100.00%
+
+Arithmetic check: 340,085 + 118,828 = 458,913
+
+Project implication: The target classes are not evenly represented.
+During model development, avoid relying only on accuracy. Depending on
+the project requirements, consider metrics such as ROC-AUC, PR-AUC,
+precision, recall, F1 score, and a confusion matrix. Choose the final
+metrics based on the actual business objective and evaluation protocol.
+
+4. CURRENT PROJECT STATE
+
+Confirmed complete: [x] Executed src/ingestion/load_labels.py. [x]
+Script read labels from data/raw/train_labels.csv. [x] Script reported
+458,913 label rows. [x] Script printed counts for target values 0 and 1.
+[x] Script reported zero import warnings. [x] Script reported that
+label-import validation passed.
+
+Not yet confirmed by the available conversation: [ ] Repository setup
+and dependency installation details. [ ] Database engine, connection
+configuration, and destination table. [ ] Schema definitions and
+constraints for the labels table. [ ] Whether raw feature data has been
+ingested. [ ] Whether feature data and labels have been joined or
+cross-validated. [ ] Duplicate, null, range, and key-integrity checks
+beyond the script’s reported validation. [ ] Exploratory data analysis.
+[ ] Feature engineering and preprocessing. [ ] Train/validation/test
+split strategy. [ ] Baseline model training. [ ] Model selection and
+hyperparameter tuning. [ ] Evaluation, calibration, explainability, and
+error analysis. [ ] Final report, reproducibility instructions, and
+deployment decisions.
+
+These unchecked items mean “not confirmed in this log”; they do not
+necessarily mean the work has not been done.
+
+5. RECOMMENDED NEXT STEPS
+
+Use this as a planning checklist. Mark an item complete only after doing
+it and recording the command/output or other evidence.
+
+A. Inspect the label-ingestion implementation [ ] Review
+src/ingestion/load_labels.py. [ ] Record how the CSV is read and which
+columns are expected. [ ] Record the destination table or storage
+location. [ ] Record the database engine and relevant configuration
+names, but do not put passwords, tokens, or other secrets in this log. [
+] Record the exact validation checks implemented by the script.
+
+B. Verify the ingested labels [ ] Confirm the destination contains
+458,913 rows. [ ] Confirm target counts match the script output. [ ]
+Check for null target values. [ ] Check for duplicate identifiers, if an
+identifier is expected to be unique. [ ] Check that target values are
+limited to the documented allowed values. [ ] Record the SQL or Python
+checks and their outputs.
+
+C. Document the remaining ingestion pipeline [ ] List the raw input
+files used by the project. [ ] Record the command used to ingest each
+file. [ ] Record row counts, schemas, warnings, and validation outcomes.
+[ ] Verify feature-to-label key coverage and join cardinality when
+applicable.
+
+D. Explore and prepare the data [ ] Document row/column counts and data
+types. [ ] Inspect missing values, duplicate records, and distributions.
+[ ] Confirm the prediction target’s documented meaning. [ ] Define a
+leakage-safe train/validation/test strategy. [ ] Record preprocessing
+and feature-engineering decisions.
+
+E. Build and evaluate a baseline [ ] Train a simple baseline before
+attempting complex models. [ ] Record the split strategy, random seed,
+features, and model parameters. [ ] Report suitable classification
+metrics, including minority-class performance where relevant. [ ]
+Compare later models against the baseline on the same evaluation setup.
+[ ] Record any class-imbalance handling and ensure it is applied without
+leaking validation/test information.
+
+6. ENTRY TEMPLATE FOR FUTURE WORK
+
+Copy this section for each meaningful project step.
+
+Entry number: [Fill in]
+
+Date and time: [Fill in]
+
+Milestone / task: [Fill in]
+
+Objective: [What were you trying to accomplish?]
+
+Working directory: [Fill in]
+
+Command or action: [Exact command, script, notebook, SQL query, or
+manual action]
+
+Inputs: [Input files, tables, or data sources]
+
+What the code/action does: [Short explanation]
+
+Observed output: [Paste important terminal output, metrics, or results]
+
+Validation performed: [Checks performed and their outcomes]
+
+Files changed or created: [Paths, if known]
+
+Issues encountered: [Error/warning and relevant context]
+
+Resolution: [How the issue was fixed, or “not resolved”]
+
+Result: [Completed / partially completed / blocked]
+
+Next step: [One concrete follow-up action]
+
+7. RUN HISTORY
+
+2026-09-23 — Label ingestion Command: python
+src/ingestion/load_labels.py Input: data/raw/train_labels.csv Result:
+458,913 label rows reported; target 0 = 340,085; target 1 = 118,828;
+zero import warnings; label-import validation passed.
+
+8. CHANGE AND DECISION NOTES
+
+Confirmed decisions recorded so far: - No modeling or data-processing
+decisions beyond running the label-ingestion script have been confirmed
+in the available conversation.
+
+Add future decisions here: - Decision: Reason: Alternatives considered:
+Date: Consequences:
+
+9. IMPORTANT REPRODUCIBILITY AND SECURITY NOTES
+
+-   Run commands from the intended project environment and record the
+    working directory.
+-   Record dependency/environment changes when they affect
+    reproducibility.
+-   Do not store passwords, API keys, database credentials, access
+    tokens, or other secrets in this plain-text log.
+-   Prefer relative paths in reusable instructions when appropriate,
+    while preserving the exact paths printed by tools as evidence.
+-   When reporting metrics, record the dataset split, random seed, model
+    version, and relevant configuration so results can be reproduced.
+-   Distinguish confirmed results from assumptions and future plans.
+
+END OF CURRENT LOG
+
+
+### Milestone: LightGBM Baseline and AMEX Metric Evaluation
+
+**Date:** 11 October 2026
+
+**Objective:** Train a first credit-risk classification model and evaluate its performance using general classification metrics and the AMEX competition metric.
+
+**Model**
+- Algorithm: LightGBM binary classifier.
+- Training customers: 321,238.
+- Validation customers: 68,837.
+- Engineered features: 365.
+- Best iteration: 739, selected through validation early stopping.
+- Random seed: 42.
+- Model artifact: `models/lightgbm_baseline.txt`.
+
+**Validation metrics**
+- ROC-AUC: 0.961312.
+- Average Precision: 0.898133.
+- Normalized Gini: 0.922623.
+- Defaults captured in the top 4%: 15.3669%.
+- AMEX metric: 0.538146.
+- Validation target rate: approximately 25.8931%.
+
+**Feature importance**
+- The leading feature by gain was `latest__P_2`, followed by `mean__P_2`, `latest__B_9`, and `latest__B_1`.
+- Feature importance was exported to `reports/lightgbm_feature_importance.csv`.
+
+**Artifacts**
+- `models/lightgbm_baseline.txt`
+- `reports/lightgbm_baseline_metrics.json`
+- `reports/amex_validation_metrics.json`
+- `reports/lightgbm_feature_importance.csv`
+
+**Interpretation and limitations**
+- Initial validation ranking performance is strong on the competition dataset.
+- The AMEX metric provides an additional measure of how effectively the model prioritizes defaults among the highest-risk customers.
+- The competition's class sampling means the observed target rate must not be interpreted as a real-world portfolio default rate.
+- The current experiment uses a random customer-level split and full-history summary features. It does not yet establish out-of-time or early-warning performance.
+- Feature importance reflects model behavior, not causal effects.
+
+**Next steps**
+1. Run feature-ablation experiments for features with more than 99% and 95% missingness.
+2. Compare the AMEX metric and supporting validation metrics against the baseline.
+3. Investigate risk deciles and default capture at different review capacities.
+4. Keep the test partition untouched until model selection is complete.
+5. Subsequently design a time-based evaluation if the project is to make early-warning claims.

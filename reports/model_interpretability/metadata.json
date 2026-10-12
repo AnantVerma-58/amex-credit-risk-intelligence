@@ -1,0 +1,8 @@
+{
+  "model_path": "models/experiments/remove_over_99pct_missing.txt",
+  "validation_rows": 68837,
+  "shap_sample_rows": 5000,
+  "feature_count": 353,
+  "random_seed": 42,
+  "explanation_note": "SHAP describes model attribution, not causality. SHAP values are calculated on a validation sample."
+}

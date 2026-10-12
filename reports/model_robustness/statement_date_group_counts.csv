@@ -1,0 +1,4 @@
+statement_date_group,customers,earliest_date,latest_date
+Mar 1-10,20360,2018-03-01,2018-03-10
+Mar 11-20,23263,2018-03-11,2018-03-20
+Mar 21-31,25214,2018-03-21,2018-03-31

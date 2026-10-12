@@ -1,0 +1,9 @@
+{
+  "customers_with_labels_and_history": 458913,
+  "earliest_first_statement": "2017-03-01",
+  "latest_last_statement": "2018-03-31",
+  "median_statement_count": 13.0,
+  "minimum_statement_count": 1,
+  "maximum_statement_count": 13,
+  "target_1_rate_in_joined_data": 0.2589336105100531
+}

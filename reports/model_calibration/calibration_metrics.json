@@ -1,0 +1,14 @@
+{
+  "evaluation": "validation_probability_calibration",
+  "model_path": "models/experiments/remove_over_99pct_missing.txt",
+  "validation_rows": 68837,
+  "feature_count": 353,
+  "observed_positive_rate": 0.2589305170184639,
+  "mean_predicted_score": 0.25773743363384977,
+  "brier_score": 0.06803587274303545,
+  "log_loss": 0.21888397669487367,
+  "reliability_bins": 10,
+  "binning": "quantile / approximately equal-frequency",
+  "random_seed": 42,
+  "interpretation_note": "These calibration metrics reflect the competition-sampled validation distribution. The negative class was sampled, so scores are not automatically real-world default probabilities. Calibration against a representative portfolio population may be required."
+}

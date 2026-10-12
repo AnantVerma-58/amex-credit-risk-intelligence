@@ -1,0 +1,23 @@
+{
+  "customers": 68838,
+  "positive_count": 17825,
+  "positive_rate_sampled": 0.25894128243121534,
+  "roc_auc": 0.961221390944843,
+  "average_precision": 0.8983094760487997,
+  "log_loss": 0.21831616071216048,
+  "brier_score": 0.06806646156345998,
+  "weighted_normalized_gini": 0.9224413623391529,
+  "weighted_top4_default_capture": 0.6621598877980365,
+  "amex_metric": 0.7923006250685947,
+  "model": "Frozen LightGBM-CatBoost ensemble",
+  "lightgbm_weight": 0.7,
+  "catboost_weight": 0.3,
+  "lightgbm_model": "models/experiments/remove_over_99pct_missing.txt",
+  "catboost_model": "models/catboost_baseline.cbm",
+  "feature_count": 353,
+  "lightgbm_scoring_seconds": 1.064,
+  "catboost_scoring_seconds": 0.253,
+  "evaluation_partition": "held-out test",
+  "selection_partition": "validation",
+  "test_used_for_model_selection": false
+}

@@ -1,0 +1,25 @@
+{
+  "model": "LightGBM baseline",
+  "random_seed": 42,
+  "train_rows": 321238,
+  "validation_rows": 68837,
+  "feature_count": 365,
+  "categorical_features": [
+    "latest__D_63",
+    "latest__D_64",
+    "latest__D_66",
+    "latest__D_68",
+    "latest__B_30",
+    "latest__B_38",
+    "latest__D_114",
+    "latest__D_116",
+    "latest__D_117",
+    "latest__D_120",
+    "latest__D_126"
+  ],
+  "best_iteration": 739,
+  "validation_roc_auc": 0.9613115754614034,
+  "validation_average_precision": 0.8981328082595159,
+  "validation_target_rate": 0.2589305170184639,
+  "note": "Random customer-level split with full-history summary features; not an out-of-time early-warning evaluation."
+}

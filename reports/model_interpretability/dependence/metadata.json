@@ -1,0 +1,12 @@
+{
+  "model_path": "models/experiments/remove_over_99pct_missing.txt",
+  "validation_sample_rows": 5000,
+  "random_seed": 42,
+  "selected_features": [
+    "latest__P_2",
+    "latest__B_1",
+    "latest__B_4",
+    "latest__D_39"
+  ],
+  "shap_output_note": "TreeExplainer default raw output for binary LightGBM is typically log-odds. Positive SHAP contributions increase the model output; they do not establish causation."
+}

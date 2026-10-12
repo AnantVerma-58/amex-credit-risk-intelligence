@@ -1,0 +1,27 @@
+name: amex
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pymysql
+  - polars
+  - lightgbm
+  - shap
+  - mlflow
+  - python-dotenv
+  - catboost
+  - scipy
+  - ipykernel
+  - pyyaml
+  - xgboost
+  - numpy
+  - jupyterlab
+  - sqlalchemy
+  - streamlit
+  - pandas
+  - scikit-learn
+  - seaborn
+  - matplotlib
+  - pyarrow
+  - pytest
+  - plotly

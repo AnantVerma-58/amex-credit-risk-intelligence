@@ -1,0 +1,12 @@
+{
+  "model": "LightGBM baseline",
+  "partition": "validation",
+  "rows": 68837,
+  "roc_auc": 0.9613115754614034,
+  "average_precision": 0.8981328082595159,
+  "normalized_gini": 0.9226231509228064,
+  "defaults_captured_top_4pct": 0.15366921005385997,
+  "amex_metric": 0.5381461804883332,
+  "top_4pct_customer_count": 2753,
+  "note": "Random customer-level split; full-history summary features; not an out-of-time early-warning evaluation."
+}

@@ -1,0 +1,139 @@
+{
+  "summary": {
+    "total_rows": 5531451,
+    "customers": 458913,
+    "earliest_statement": "2017-03-01",
+    "latest_statement": "2018-03-31",
+    "rows_after_cutoff": 0,
+    "rows_on_cutoff": 9836,
+    "null_statement_dates": 0,
+    "cutoff": "2018-03-31",
+    "cutoff_passed": true
+  },
+  "customer_last_statement_dates": [
+    {
+      "last_statement_date": "2018-03-01",
+      "customers": 12128
+    },
+    {
+      "last_statement_date": "2018-03-02",
+      "customers": 10562
+    },
+    {
+      "last_statement_date": "2018-03-03",
+      "customers": 22887
+    },
+    {
+      "last_statement_date": "2018-03-04",
+      "customers": 8918
+    },
+    {
+      "last_statement_date": "2018-03-05",
+      "customers": 10081
+    },
+    {
+      "last_statement_date": "2018-03-06",
+      "customers": 9736
+    },
+    {
+      "last_statement_date": "2018-03-07",
+      "customers": 9097
+    },
+    {
+      "last_statement_date": "2018-03-08",
+      "customers": 15581
+    },
+    {
+      "last_statement_date": "2018-03-09",
+      "customers": 15737
+    },
+    {
+      "last_statement_date": "2018-03-10",
+      "customers": 21547
+    },
+    {
+      "last_statement_date": "2018-03-11",
+      "customers": 8643
+    },
+    {
+      "last_statement_date": "2018-03-12",
+      "customers": 15916
+    },
+    {
+      "last_statement_date": "2018-03-13",
+      "customers": 15737
+    },
+    {
+      "last_statement_date": "2018-03-14",
+      "customers": 15172
+    },
+    {
+      "last_statement_date": "2018-03-15",
+      "customers": 16733
+    },
+    {
+      "last_statement_date": "2018-03-16",
+      "customers": 16395
+    },
+    {
+      "last_statement_date": "2018-03-17",
+      "customers": 23373
+    },
+    {
+      "last_statement_date": "2018-03-18",
+      "customers": 8554
+    },
+    {
+      "last_statement_date": "2018-03-19",
+      "customers": 16385
+    },
+    {
+      "last_statement_date": "2018-03-20",
+      "customers": 18567
+    },
+    {
+      "last_statement_date": "2018-03-21",
+      "customers": 16478
+    },
+    {
+      "last_statement_date": "2018-03-22",
+      "customers": 14146
+    },
+    {
+      "last_statement_date": "2018-03-23",
+      "customers": 16325
+    },
+    {
+      "last_statement_date": "2018-03-24",
+      "customers": 21156
+    },
+    {
+      "last_statement_date": "2018-03-25",
+      "customers": 8856
+    },
+    {
+      "last_statement_date": "2018-03-26",
+      "customers": 15940
+    },
+    {
+      "last_statement_date": "2018-03-27",
+      "customers": 15457
+    },
+    {
+      "last_statement_date": "2018-03-28",
+      "customers": 17263
+    },
+    {
+      "last_statement_date": "2018-03-29",
+      "customers": 14414
+    },
+    {
+      "last_statement_date": "2018-03-30",
+      "customers": 17293
+    },
+    {
+      "last_statement_date": "2018-03-31",
+      "customers": 9836
+    }
+  ]
+}

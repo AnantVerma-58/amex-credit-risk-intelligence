@@ -1,0 +1,19 @@
+{
+  "roc_auc": 0.9607781532683595,
+  "average_precision": 0.8970175601795476,
+  "log_loss": 0.21959434027227845,
+  "normalized_gini": 0.921554870760791,
+  "defaults_captured_top_4pct": 0.657671809256662,
+  "amex_metric": 0.7896133400087265,
+  "customers_in_weighted_top_4pct": 13213,
+  "evaluation": "final_test",
+  "model_path": "models/experiments/remove_over_99pct_missing.txt",
+  "feature_count": 353,
+  "test_rows": 68838,
+  "target_0_count": 51013,
+  "target_1_count": 17825,
+  "target_1_fraction": 0.25894128243121534,
+  "test_files": 14,
+  "random_seed": 42,
+  "metric_note": "AMEX weighted metric: target=0 receives weight 20; target=1 receives weight 1. Test set was not used to select features or tune model parameters."
+}

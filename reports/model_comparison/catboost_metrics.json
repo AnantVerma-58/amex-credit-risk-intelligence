@@ -1,0 +1,17 @@
+{
+  "customers": 68837,
+  "positive_count": 17824,
+  "positive_rate": 0.2589305170184639,
+  "roc_auc": 0.9613421829127865,
+  "average_precision": 0.8982772278399895,
+  "log_loss": 0.2182468144154756,
+  "brier_score": 0.06776120116994434,
+  "weighted_normalized_gini": 0.9226887033085562,
+  "weighted_top4_default_capture": 0.6596723518850988,
+  "amex_metric": 0.7911805275968276,
+  "model": "CatBoost",
+  "training_seconds": 1042.872,
+  "validation_scoring_seconds": 0.354,
+  "best_iteration": 1526,
+  "iterations_configured": 2000
+}

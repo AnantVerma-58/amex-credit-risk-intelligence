@@ -1,0 +1,17 @@
+{
+  "customers": 68837,
+  "positive_count": 17824,
+  "positive_rate": 0.2589305170184639,
+  "roc_auc": 0.9572785609291835,
+  "average_precision": 0.8878144151898165,
+  "log_loss": 0.23097236115512032,
+  "brier_score": 0.0714251390920281,
+  "weighted_normalized_gini": 0.91456192078641,
+  "weighted_top4_default_capture": 0.6392504488330341,
+  "amex_metric": 0.7769061848097221,
+  "model": "Logistic Regression",
+  "training_seconds": 315.715,
+  "validation_scoring_seconds": 1.167,
+  "iterations_used": 260,
+  "max_iterations": 300
+}

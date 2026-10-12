@@ -1,0 +1,16 @@
+{
+  "model": "LightGBM",
+  "customers": 68838,
+  "positive_count": 17825,
+  "positive_rate_sampled": 0.25894128243121534,
+  "roc_auc": 0.9607781532683595,
+  "average_precision": 0.8970175601795476,
+  "log_loss": 0.21959434027227845,
+  "brier_score": 0.068515432187729,
+  "feature_count": 353,
+  "evaluation_partition": "held-out test",
+  "test_used_for_model_selection": false,
+  "weighted_normalized_gini": 0.9215548707607896,
+  "weighted_top4_default_capture": 0.657671809256662,
+  "amex_metric": 0.7896133400087257
+}
