@@ -22,6 +22,72 @@ The selected ensemble combines **70% LightGBM + 30% CatBoost**. The weights were
 
 **Held-out test evaluation:** 68,838 customers, including 17,825 positive examples, evaluated with 353 model features.
 
+## Interpretation
+
+The objective of a credit-risk model is not just to classify customers correctly. It is to help a lender **rank customers by estimated risk, prioritize limited review resources, and make better-informed credit decisions**.
+
+The selected LightGBM–CatBoost ensemble achieved a ROC-AUC of **0.9612**, a weighted normalized Gini of **0.9224**, and a weighted top-4% default-capture result of **66.22%** on the held-out test set.
+
+### 1. Prioritizing the Highest-Risk Customers
+
+The weighted top-4% default-capture result of 66.22% means that, under the project's evaluation metric, the highest-ranked 4% of customers account for approximately 66.22% of the weighted positive-class mass.
+
+**Business implication:** If a lender had capacity to review only a small fraction of accounts, a strong risk-ranking model could help direct that limited capacity toward customers with higher estimated risk.
+
+This result illustrates the potential value of risk-based prioritization. It does **not** mean that 66.22% of defaults could be prevented, and it does not establish the financial benefit of a particular intervention.
+
+### 2. Understanding Risk Ranking
+
+The ensemble achieved a ROC-AUC of **0.9612**, compared with **0.9608** for the LightGBM baseline.
+
+ROC-AUC measures how well a model ranks positive examples above negative examples across classification thresholds. The ensemble's result indicates strong discrimination on this held-out sample, with a modest improvement over the baseline.
+
+**Business implication:** Better risk ranking can help organize accounts into relative-risk groups for further investigation, monitoring, or review. The appropriate actions would still depend on business policy, customer circumstances, and regulatory requirements.
+
+### 3. Ranking Is Not the Same as Probability Calibration
+
+A model can rank customers effectively without producing probabilities that accurately represent real-world default likelihoods.
+
+| Evaluation dimension | Project result | Business interpretation |
+|---|---|---|
+| Risk ranking | ROC-AUC: 0.9612 | Measures separation between positive and negative examples |
+| Concentration of risk | Weighted top-4% capture: 66.22% | Measures positive-class concentration among the highest-ranked customers under the project metric |
+| Probability quality | Log loss: 0.2183; Brier score: 0.0681 | Evaluates the quality of predicted probabilities |
+| Calibration | Reliability curve and calibration reports | Helps assess agreement between predicted probabilities and observed outcome frequencies |
+
+The log loss and Brier score provide useful probability-quality measures, but they do not alone establish that probabilities are calibrated for a target lending population. The reliability curve and calibration analysis should also be examined.
+
+**Business implication:** Ranking scores may support prioritization, while decisions that depend on absolute default probabilities—such as expected-loss estimation, pricing, or credit limits—require suitable calibration and additional validation.
+
+### 4. From Model Performance to Credit-Risk Decisions
+
+A practical credit-risk workflow could use model outputs to support:
+
+- **Risk segmentation:** Group accounts into relative-risk bands for analysis and monitoring.
+- **Review prioritization:** Direct limited analyst or collections-review capacity toward higher-ranked accounts where appropriate.
+- **Portfolio monitoring:** Track changes in score distributions, risk concentration, and observed outcomes over time.
+- **Decision analysis:** Evaluate potential thresholds against business costs, expected benefits, customer impact, and applicable policy constraints.
+
+These are potential applications of the project's modeling outputs, not implemented or validated production decisions.
+
+### 5. What Is Required Before Production Use?
+
+The reported results are based on a held-out sample from the American Express Default Prediction dataset. They do not demonstrate that the same performance will hold for a live portfolio.
+
+Before using the model to inform real credit decisions, additional work would be required:
+
+1. **Population validation:** Evaluate performance on data representative of the intended lending population.
+2. **Probability calibration:** Validate predicted probabilities and recalibrate them if necessary for the target population.
+3. **Decision-threshold analysis:** Quantify the trade-offs between false positives, missed defaults, review capacity, and business costs.
+4. **Fairness and governance:** Assess potential disparate impacts, document limitations, and establish appropriate oversight.
+5. **Ongoing monitoring:** Track data drift, calibration changes, and realized performance as new outcomes become available.
+
+### Business Takeaway
+
+The main result is the model's ability to **concentrate positive-class weight among the highest-ranked customers in the held-out sample**. Combined with strong ROC-AUC and complementary probability-quality metrics, this provides a useful foundation for demonstrating credit-risk ranking and analytics.
+
+The next step toward a decision-support system is to connect these model outputs to validated risk bands, calibrated probabilities, explicit business assumptions, and monitored decision policies.
+
 ### Interpreting the Metrics
 
 - **Ranking:** ROC-AUC of 0.9612 indicates strong discrimination between positive and negative examples in this held-out sample.
